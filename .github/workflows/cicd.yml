@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Build docker container
-        run: echo "Docker container1 build"
+        run: echo "Docker container build"
 
   test:
     needs: [build]
