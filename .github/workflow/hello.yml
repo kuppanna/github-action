@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Hello to user
-        run: echo "hello dostooo"
+        run: echo "hello dostooo0000"
 
       - name: Say hello username
         run: echo "hello $USER"
