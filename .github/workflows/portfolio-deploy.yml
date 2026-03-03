@@ -2,8 +2,8 @@ name: Deploy Portfolio Website
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   pages: write
