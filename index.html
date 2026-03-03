@@ -1,187 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kuppanna Rathod | SRE / DevOps Manager</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | DevOps Engineer</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
             line-height: 1.6;
         }
 
         header {
-            background-color: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
         }
 
-        nav {
-            background: #1f2937;
-            padding: 12px;
-            text-align: center;
+        header h1 {
+            font-size: 1.2rem;
+            color: #38bdf8;
         }
 
         nav a {
-            color: white;
-            margin: 0 15px;
+            color: #f1f5f9;
             text-decoration: none;
-            font-weight: bold;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #00adb5;
+            color: #38bdf8;
         }
 
         section {
-            padding: 40px;
-            max-width: 1000px;
+            padding: 100px 8%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #38bdf8;
+            color: #0f172a;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0ea5e9;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
             margin: auto;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .skills-grid,
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
         .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 25px;
+            background: #1e293b;
+            padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
-        h2 {
-            color: #111827;
-            border-bottom: 2px solid #00adb5;
-            padding-bottom: 5px;
+        .card:hover {
+            transform: translateY(-8px);
+            background: #334155;
         }
 
-        ul {
-            padding-left: 20px;
+        .card h4 {
+            margin-bottom: 1rem;
+            color: #38bdf8;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 1rem;
         }
 
         footer {
-            background: #111827;
-            color: white;
             text-align: center;
-            padding: 20px;
+            padding: 2rem;
+            background: #1e293b;
+            color: #94a3b8;
         }
 
-        button {
-            padding: 10px 20px;
-            background: #00adb5;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+        @media(max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
 
-        button:hover {
-            background: #007b80;
+            nav {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Kuppanna Rathod</h1>
-    <p>SRE / DevOps Manager | Kubernetes | AWS | Cloud Architecture</p>
-    <p>📞 +91 8197236688 | ✉ kuppanna.rathod@gmail.com</p>
+    <h1>YourName</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section id="about">
-    <div class="card">
-        <h2>Professional Summary</h2>
-        <p>
-            SRE / DevOps Manager with 13+ years of experience managing large-scale cloud infrastructure,
-            DevOps transformation, system administration, and team leadership.
-            CKA and CKS certified professional specializing in Kubernetes, AWS, automation, and
-            reliability engineering. Proven track record of leading high-performing teams
-            and delivering complex infrastructure projects on time and within scope.
-        </p>
-    </div>
+<section class="hero">
+    <h2>Hi, I'm <span>Kuppanna Rathod</span></h2>
+    <p>
+        DevOps Engineer specializing in AWS, Kubernetes, CI/CD, and Cloud Architecture.
+        I build scalable, secure, and automated cloud infrastructure.
+    </p>
+    <a href="#projects" class="btn">View My Work</a>
 </section>
 
-<section id="certifications">
-    <div class="card">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Certified Kubernetes Administrator (CKA) – LF-jjvgtkn4wk</li>
-            <li>Certified Kubernetes Security Specialist (CKS) – LF-t5unf3gnpg</li>
-        </ul>
-    </div>
+<section id="about" class="about">
+    <h3>About Me</h3>
+    <p>
+        I am a Cloud & DevOps Engineer with experience managing multi-account AWS environments,
+        Kubernetes clusters, CI/CD pipelines, infrastructure as code (Terraform),
+        and monitoring solutions. Passionate about automation and scalable architecture.
+    </p>
 </section>
 
 <section id="skills">
-    <div class="card">
-        <h2>Technical Skills</h2>
-        <p><strong>Cloud & Infrastructure:</strong> AWS (EC2, VPC, RDS, NAT, Route53, S3, CloudFront, IAM)</p>
-        <p><strong>Containerization & Orchestration:</strong> Docker, Kubernetes (EKS)</p>
-        <p><strong>Infrastructure as Code:</strong> Terraform, Ansible</p>
-        <p><strong>CI/CD:</strong> Jenkins, GitHub Actions, Argo CD, Git</p>
-        <p><strong>Observability:</strong> Prometheus, Grafana, New Relic, PagerDuty</p>
-        <p><strong>Programming & Automation:</strong> Python, Shell Scripting</p>
-        <p><strong>Other:</strong> Kafka, Redis, EMQX</p>
+    <h3>Technical Skills</h3>
+    <div class="skills-grid">
+        <div class="card">
+            <h4>Cloud</h4>
+            <p>AWS, VPC, IAM, EC2, S3, RDS, CloudFront</p>
+        </div>
+        <div class="card">
+            <h4>Containers</h4>
+            <p>Docker, Kubernetes, Helm</p>
+        </div>
+        <div class="card">
+            <h4>CI/CD</h4>
+            <p>GitHub Actions, Jenkins, GitLab CI</p>
+        </div>
+        <div class="card">
+            <h4>Monitoring</h4>
+            <p>Prometheus, Grafana, New Relic</p>
+        </div>
     </div>
 </section>
 
-<section id="experience">
-    <div class="card">
-        <h2>Professional Experience</h2>
-
-        <h3>ANI Technologies Pvt Ltd</h3>
-        <p><strong>SRE / DevOps Manager (Aug 2019 – Present)</strong></p>
-        <ul>
-            <li>Lead 10-member DevOps/SRE team, overseeing task allocation, mentoring, and performance management.</li>
-            <li>Drive infrastructure automation, CI/CD, observability, and system reliability initiatives.</li>
-            <li>Architect and manage scalable AWS infrastructure ensuring cost efficiency and fault tolerance.</li>
-            <li>Implemented Kubernetes (EKS) clusters following CKA/CKS best practices.</li>
-            <li>Built CI/CD pipelines using Jenkins, Argo CD, and Git.</li>
-            <li>Developed Python automation scripts for provisioning and monitoring workflows.</li>
-            <li>Implemented Terraform and Ansible for Infrastructure as Code.</li>
-            <li>Enhanced observability using Prometheus, Grafana, New Relic, and PagerDuty.</li>
-            <li>Migrated CDN from CloudFront to Akamai, improving performance by 35%.</li>
-        </ul>
-
-        <p><strong>Sr. System Engineer (Nov 2012 – Jul 2019)</strong></p>
-        <ul>
-            <li>Managed AWS deployments and automation via Python & Bash.</li>
-            <li>Administered Linux systems (RedHat, CentOS, Ubuntu).</li>
-            <li>Configured Apache, Tomcat, and Nginx servers.</li>
-            <li>Implemented IAM security governance and RBAC policies.</li>
-        </ul>
+<section id="projects">
+    <h3>Projects</h3>
+    <div class="projects-grid">
+        <div class="card">
+            <h4>Multi-Account AWS Setup</h4>
+            <p>Designed scalable AWS architecture for 100+ accounts with centralized logging and security.</p>
+        </div>
+        <div class="card">
+            <h4>Kubernetes Cluster Upgrade</h4>
+            <p>Upgraded production cluster with zero downtime and validated application compatibility.</p>
+        </div>
+        <div class="card">
+            <h4>CI/CD Automation</h4>
+            <p>Built automated pipelines using GitHub Actions for Dockerized microservices.</p>
+        </div>
     </div>
 </section>
 
-<section id="education">
-    <div class="card">
-        <h2>Education</h2>
-        <p>Bachelor of Engineering</p>
-        <p>Visvesvaraya Technological University</p>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="card">
-        <h2>Contact</h2>
-        <p>Email: kuppanna.rathod@gmail.com</p>
-        <p>Phone: +91 8197236688</p>
-        <button onclick="alert('Thank you for visiting my portfolio!')">Say Hello</button>
-    </div>
+<section id="contact" class="contact">
+    <h3>Contact Me</h3>
+    <p>Email: kuppanna.rathod@gmail.com</p>
+    <p>LinkedIn: https://www.linkedin.com/in/kuppanna-rathod/</p>
+    <p>GitHub: github.com/yourusername</p>
 </section>
 
 <footer>
-    <p>© 2026 Kuppanna Rathod | All Rights Reserved</p>
+    © 2026 Your Name | Built with ❤️
 </footer>
 
 </body>
