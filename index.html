@@ -1,64 +1,8 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Portfolio Test App</title>
-        <style>
-            body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:2rem;max-width:900px}
-            input{padding:.4rem;margin-left:.5rem}
-            button{padding:.5rem 1rem;margin-left:.5rem}
-            #greeting{margin-top:1rem;font-weight:600}
-        </style>
-    </head>
-    <body>
-        <h1>Portfolio Test App</h1>
-        <p>Use this page to verify local hosting or GitHub Pages deployment.</p>
-
-        <div>
-            <label for="name">Your name:</label>
-            <input id="name" placeholder="Type your name" />
-            <button id="greet">Greet</button>
-            <div id="greeting" aria-live="polite"></div>
-        </div>
-
-        <hr />
-
-        <div>
-            <button id="counter">Click me: <span id="count">0</span></button>
-        </div>
-
-        <script>
-            const nameInput = document.getElementById('name');
-            const greetBtn = document.getElementById('greet');
-            const greeting = document.getElementById('greeting');
-            greetBtn.addEventListener('click', ()=>{
-                const n = (nameInput.value || 'Friend').trim();
-                greeting.textContent = `Hello, ${n}! This confirms the site is served correctly.`;
-            });
-
-            let c = 0;
-            const countSpan = document.getElementById('count');
-            document.getElementById('counter').addEventListener('click', ()=>{
-                c++; countSpan.textContent = c;
-            });
-
-            // Simple public API check (non-blocking)
-            fetch('https://api.github.com/zen')
-                .then(r=>r.text())
-                .then(text=>{
-                    const p = document.createElement('p');
-                    p.textContent = 'GitHub API check: ' + text;
-                    document.body.appendChild(p);
-                }).catch(()=>{});
-        </script>
-    </body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Kuppanna Rathod | SRE / DevOps Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -66,18 +10,19 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #222;
+            background-color: #111827;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 20px;
         }
 
         nav {
-            background: #444;
-            padding: 10px;
+            background: #1f2937;
+            padding: 12px;
             text-align: center;
         }
 
@@ -94,23 +39,33 @@
 
         section {
             padding: 40px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
 
         .card {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #111827;
+            border-bottom: 2px solid #00adb5;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
         }
 
         footer {
-            background: #222;
+            background: #111827;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
         }
 
         button {
@@ -129,61 +84,105 @@
 </head>
 <body>
 
-    <header>
-        <h1>Kuppanna Rathod</h1>
-        <p>DevOps Engineer | Cloud | Kubernetes | AWS</p>
-    </header>
+<header>
+    <h1>Kuppanna Rathod</h1>
+    <p>SRE / DevOps Manager | Kubernetes | AWS | Cloud Architecture</p>
+    <p>📞 +91 8197236688 | ✉ kuppanna.rathod@gmail.com</p>
+</header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav>
+    <a href="#about">About</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <section id="about">
-        <div class="card">
-            <h2>About Me</h2>
-            <p>
-                I am a passionate DevOps Engineer with experience in AWS, Docker,
-                Kubernetes, CI/CD pipelines and Linux troubleshooting.
-            </p>
-        </div>
-    </section>
+<section id="about">
+    <div class="card">
+        <h2>Professional Summary</h2>
+        <p>
+            SRE / DevOps Manager with 13+ years of experience managing large-scale cloud infrastructure,
+            DevOps transformation, system administration, and team leadership.
+            CKA and CKS certified professional specializing in Kubernetes, AWS, automation, and
+            reliability engineering. Proven track record of leading high-performing teams
+            and delivering complex infrastructure projects on time and within scope.
+        </p>
+    </div>
+</section>
 
-    <section id="skills">
-        <div class="card">
-            <h2>Skills</h2>
-            <ul>
-                <li>AWS & Cloud Architecture</li>
-                <li>Docker & Kubernetes</li>
-                <li>CI/CD (GitHub Actions, Jenkins)</li>
-                <li>Linux & Shell Scripting</li>
-                <li>Python Basics</li>
-            </ul>
-        </div>
-    </section>
+<section id="certifications">
+    <div class="card">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Certified Kubernetes Administrator (CKA) – LF-jjvgtkn4wk</li>
+            <li>Certified Kubernetes Security Specialist (CKS) – LF-t5unf3gnpg</li>
+        </ul>
+    </div>
+</section>
 
-    <section id="projects">
-        <div class="card">
-            <h2>Projects</h2>
-            <p><strong>DevOps Nginx Deployment</strong> - Dockerized Nginx application deployed using CI/CD pipeline.</p>
-            <p><strong>Kubernetes Microservices</strong> - Managed 20+ microservices with proper namespace and labeling strategy.</p>
-        </div>
-    </section>
+<section id="skills">
+    <div class="card">
+        <h2>Technical Skills</h2>
+        <p><strong>Cloud & Infrastructure:</strong> AWS (EC2, VPC, RDS, NAT, Route53, S3, CloudFront, IAM)</p>
+        <p><strong>Containerization & Orchestration:</strong> Docker, Kubernetes (EKS)</p>
+        <p><strong>Infrastructure as Code:</strong> Terraform, Ansible</p>
+        <p><strong>CI/CD:</strong> Jenkins, GitHub Actions, Argo CD, Git</p>
+        <p><strong>Observability:</strong> Prometheus, Grafana, New Relic, PagerDuty</p>
+        <p><strong>Programming & Automation:</strong> Python, Shell Scripting</p>
+        <p><strong>Other:</strong> Kafka, Redis, EMQX</p>
+    </div>
+</section>
 
-    <section id="contact">
-        <div class="card">
-            <h2>Contact</h2>
-            <p>Email: your-email@example.com</p>
-            <p>LinkedIn: linkedin.com/in/yourprofile</p>
-            <button onclick="alert('Thank you for visiting!')">Say Hello</button>
-        </div>
-    </section>
+<section id="experience">
+    <div class="card">
+        <h2>Professional Experience</h2>
 
-    <footer>
-        <p>© 2026 Kuppanna Rathod | All Rights Reserved</p>
-    </footer>
+        <h3>ANI Technologies Pvt Ltd</h3>
+        <p><strong>SRE / DevOps Manager (Aug 2019 – Present)</strong></p>
+        <ul>
+            <li>Lead 10-member DevOps/SRE team, overseeing task allocation, mentoring, and performance management.</li>
+            <li>Drive infrastructure automation, CI/CD, observability, and system reliability initiatives.</li>
+            <li>Architect and manage scalable AWS infrastructure ensuring cost efficiency and fault tolerance.</li>
+            <li>Implemented Kubernetes (EKS) clusters following CKA/CKS best practices.</li>
+            <li>Built CI/CD pipelines using Jenkins, Argo CD, and Git.</li>
+            <li>Developed Python automation scripts for provisioning and monitoring workflows.</li>
+            <li>Implemented Terraform and Ansible for Infrastructure as Code.</li>
+            <li>Enhanced observability using Prometheus, Grafana, New Relic, and PagerDuty.</li>
+            <li>Migrated CDN from CloudFront to Akamai, improving performance by 35%.</li>
+        </ul>
+
+        <p><strong>Sr. System Engineer (Nov 2012 – Jul 2019)</strong></p>
+        <ul>
+            <li>Managed AWS deployments and automation via Python & Bash.</li>
+            <li>Administered Linux systems (RedHat, CentOS, Ubuntu).</li>
+            <li>Configured Apache, Tomcat, and Nginx servers.</li>
+            <li>Implemented IAM security governance and RBAC policies.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="education">
+    <div class="card">
+        <h2>Education</h2>
+        <p>Bachelor of Engineering</p>
+        <p>Visvesvaraya Technological University</p>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: kuppanna.rathod@gmail.com</p>
+        <p>Phone: +91 8197236688</p>
+        <button onclick="alert('Thank you for visiting my portfolio!')">Say Hello</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Kuppanna Rathod | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
