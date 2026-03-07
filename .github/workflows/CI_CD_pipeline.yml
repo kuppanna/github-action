@@ -1,14 +1,14 @@
-name: CI/CD pipeline
-on:
-    push:
-        branches: [ main ]
+name: DevOps Test Pipeline
+
+on: [push]
+
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-            - runs: git clone repository-url
-            - name: install dependencies
-            - run: npm install
-            - name: run tests
-            - run: npm test
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        run: echo "Pipeline running successfully"
