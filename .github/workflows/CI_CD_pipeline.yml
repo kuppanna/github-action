@@ -1,17 +1,17 @@
 name: DevOps Test Pipeline
 
-on: 
- workflow_dispatch: 
-   inputs:
+on:
+  workflow_dispatch:
+    inputs:
       environment:
-        description:  this  is the env value where the wokr flow  run
-        default: 'dev'
+        description: "This is the environment where the workflow will run"
         required: true
+        default: dev
         type: choice
-        - dev
-        - prod
-        - stage
-      
+        options:
+          - dev
+          - prod
+          - stage
 
 jobs:
   test:
