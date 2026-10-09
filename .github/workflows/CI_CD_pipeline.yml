@@ -1,6 +1,17 @@
 name: DevOps Test Pipeline
 
-on: [push]
+on: 
+ workflow_dispatch: 
+   inputs:
+      environment:
+        description:  this  is the env value where the wokr flow  run
+        default: 'dev'
+        required: true
+        type: choice
+        - dev
+        - prod
+        - stage
+      
 
 jobs:
   test:
