@@ -1,0 +1,73 @@
+
+name: CI-CD Self Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  code-test-build-deploy:
+    name: Code, Test, Build and Deploy
+    runs-on: [self-hosted, Linux, X64]
+
+    env:
+      IMAGE_NAME: myapp
+      CONTAINER_NAME: myapp-container
+
+    steps:
+      # 1. CODE: Download source code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Display Source Information
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF_NAME"
+          echo "Commit: $GITHUB_SHA"
+          ls -la
+
+      # 2. TEST: Run application tests
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm test
+
+      # 3. BUILD: Build Docker image
+      - name: Build Docker Image
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build \
+            -t "$IMAGE_NAME:$IMAGE_TAG" \
+            -t "$IMAGE_NAME:latest" .
+
+      # 4. DEPLOY: Run application on this EC2 host
+      - name: Deploy Application
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker rm -f "$CONTAINER_NAME" || true
+
+          docker run -d \
+            --name "$CONTAINER_NAME" \
+            --restart unless-stopped \
+            -p 3000:3000 \
+            "$IMAGE_NAME:$IMAGE_TAG"
+
+      # 5. VERIFY: Check deployment
+      - name: Verify Deployment
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          sleep 5
+          docker ps --filter "name=$CONTAINER_NAME"
+          docker logs --tail 50 "$CONTAINER_NAME"
