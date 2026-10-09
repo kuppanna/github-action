@@ -1,0 +1,24 @@
+---
+name: DevOps Test Pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: This is the environment where the workflow will run
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
+          - stage
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run script
+        run: |
+          echo "Pipeline running successfully"
+          echo "Selected environment: ${{ inputs.environment }}"
